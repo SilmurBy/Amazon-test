@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": [
+      "ES6",
+      "dom"
+    ],
+    "types": [
+      "cypress",
+      "cypress-xpath",
+    ],
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
+  },
+  "display": "Recommended",
+  "include": [
+    "**/*.ts",
+    "node_modules/@types/node/globals.d.ts"
+  ]
+}
+
