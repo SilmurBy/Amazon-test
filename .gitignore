@@ -1,5 +1,6 @@
 node_modules
 cypress/result/
 cypress/videos/
+cypress/screenshots
 .idea
 package-lock.json
