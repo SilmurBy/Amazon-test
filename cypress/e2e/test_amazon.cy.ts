@@ -1,24 +1,19 @@
 describe('Amazon', function () {
     it('can find and add game console', function () {
-
         cy.getPage("/");
 
-        cy.setTextToElement(".//input[@id='twotabsearchtextbox']", "Playstation Classic Console");
+        cy.setTextToElement("//input[@id='twotabsearchtextbox']", "Playstation Classic Console");
 
-        cy.clickOnElement(".//input[@id='nav-search-submit-button']");
+        cy.clickOnElement("//input[@id='nav-search-submit-button']");
 
-        cy.clickOnElement("(.//img[contains(@alt,'Playstation')])[1]");
+        cy.clickOnElement("(//span[contains(text(),'Sony PlayStation Classic')])[1]");
 
-        cy.clickOnElement(".//a[@title='See All Buying Options']");
+        cy.clickOnElement("//input[@name='submit.add-to-cart']");
 
-        cy.clickOnElement(".//input[@name='submit.addToCart']");
+        cy.checkVisibilityOfElement("//span[contains(text(),'Added to Cart')]");
 
-        cy.checkVisibilityOfElement(".//div[text()='Added']");
+        cy.clickOnElement("//header[@id='navbar-main']//a[contains(text(),'Go to Cart')]");
 
-        cy.clickOnElement(".//i[@aria-label='aod-close']");
-
-        cy.clickOnElement(".//a[@id='nav-cart']");
-
-        cy.checkContainsTextInElement(".//span[@class='a-truncate-cut']", "Playstation Classic Console");
+        cy.checkContainsTextInElement("//span[@class='a-truncate-cut']", "Sony PlayStation Classic");
     });
 });

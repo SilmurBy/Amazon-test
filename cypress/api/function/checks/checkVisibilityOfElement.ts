@@ -6,7 +6,6 @@ declare global {
     }
 }
 
-export const checkVisibilityOfElement = (elementSelector: string) => {
-
-    return cy.uploadSelectorType(elementSelector).should('exist').scrollIntoView().should('be.visible');
-};
+export function checkVisibilityOfElement (elementSelector: string): Cypress.Chainable<JQuery<HTMLElement>> {
+    return cy.uploadSelectorType(elementSelector).scrollIntoView().should('be.visible');
+}

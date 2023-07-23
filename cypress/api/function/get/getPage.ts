@@ -1,3 +1,5 @@
+import AUTWindow = Cypress.AUTWindow;
+
 declare global {
     namespace Cypress {
         interface Chainable {
@@ -6,6 +8,6 @@ declare global {
     }
 }
 
-export const getPage = (url: string) => {
+export function getPage (url: string): Cypress.Chainable<AUTWindow> {
     return cy.visit(url);
-};
+}

@@ -6,11 +6,10 @@ declare global {
     }
 }
 
-export const setTextToElement = (elementSelector: string, setText: string) => {
-
+export function setTextToElement (elementSelector: string, setText: string): void {
     cy.uploadSelectorType(elementSelector).should('be.visible');
-    [...setText].forEach((c) => {
+    [...setText].forEach((c: string): void => {
         cy.uploadSelectorType(elementSelector).click();
         cy.uploadSelectorType(elementSelector).type(c, {delay: 0});
     });
-};
+}

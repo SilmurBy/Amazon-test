@@ -6,7 +6,6 @@ declare global {
     }
 }
 
-export const checkContainsTextInElement = (elementSelector: string, text: string) => {
-
-    return cy.uploadSelectorType(elementSelector).should('exist').scrollIntoView().should('contain.text', text);
-};
+export function checkContainsTextInElement (elementSelector: string, text: string): Cypress.Chainable<JQuery<HTMLElement>> {
+    return cy.uploadSelectorType(elementSelector).scrollIntoView().should('include.text', text);
+}

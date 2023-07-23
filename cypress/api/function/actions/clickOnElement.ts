@@ -6,7 +6,6 @@ declare global {
     }
 }
 
-export const clickOnElement = (elementSelector: string) => {
-
+export function clickOnElement (elementSelector: string): Cypress.Chainable<JQuery<HTMLElement>> {
     return cy.uploadSelectorType(elementSelector).should('exist').scrollIntoView().click();
-};
+}
